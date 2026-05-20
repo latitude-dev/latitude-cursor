@@ -16,6 +16,7 @@ Edit `~/.cursor/mcp.json` and add:
 {
   "mcpServers": {
     "latitude": {
+      "type": "http",
       "url": "https://api.latitude.so/v1/mcp"
     }
   }
@@ -27,8 +28,8 @@ Then **Cursor Settings → Tools & MCPs**, click **Connect** on the `latitude` M
 ## Local development
 
 ```bash
-# From the repo root:
-ln -s "$(pwd)/cursor" ~/.cursor/plugins/local/latitude
+# From a clone of this repo:
+ln -s "$(pwd)" ~/.cursor/plugins/local/latitude
 ```
 
 Restart Cursor (or run **Developer: Reload Window**) and verify the plugin loads at **Cursor Settings → Features → Model Context Protocol**.
@@ -36,15 +37,16 @@ Restart Cursor (or run **Developer: Reload Window**) and verify the plugin loads
 ## Layout
 
 ```
-cursor/
+.
 ├── .cursor-plugin/
 │   └── plugin.json     # Manifest
 ├── mcp.json            # Latitude MCP server config
 ├── assets/             # Icons
+├── LICENSE
 └── README.md
 ```
 
-Single-plugin layout per Cursor docs: the plugin lives at the root of this folder and there is no `.cursor-plugin/marketplace.json`.
+Single-plugin layout per [Cursor docs](https://cursor.com/docs/plugins): the plugin lives at the repo root and there is no `.cursor-plugin/marketplace.json`.
 
 ## Submission
 
