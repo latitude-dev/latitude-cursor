@@ -18,5 +18,6 @@
     "monitoring",
     "tracing"
   ],
-  "logo": "assets/icon-light.png"
+  "logo": "assets/icon-light.png",
+  "primaryColor": "#007fff"
 }
