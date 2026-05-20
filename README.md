@@ -29,10 +29,22 @@ Then **Cursor Settings → Tools & MCPs**, click **Connect** on the `latitude` M
 
 ```bash
 # From a clone of this repo:
-ln -s "$(pwd)" ~/.cursor/plugins/local/latitude
+cp -R "$(pwd)" ~/.cursor/plugins/local/latitude
 ```
 
-Restart Cursor (or run **Developer: Reload Window**) and verify the plugin loads at **Cursor Settings → Features → Model Context Protocol**.
+Restart Cursor (`Cmd+Shift+P → Developer: Reload Window` is enough), then verify the plugin loads at **Cursor Settings → Tools & MCPs**. Click **Connect** on `latitude`, sign in, and pick the Latitude organization to authorize.
+
+To iterate, re-copy:
+
+```bash
+rm -rf ~/.cursor/plugins/local/latitude && cp -R "$(pwd)" ~/.cursor/plugins/local/latitude
+# Cmd+Shift+P → Developer: Reload Window
+```
+
+### Local-install limitations
+
+- **Don't use `ln -s` to symlink the plugin.** Cursor's official docs suggest symlinks for local development, but current Cursor stable (≥ 3.4.20 tested) does not follow symlinks into `~/.cursor/plugins/local/`. Use `cp -R` and re-copy on changes.
+- **The plugin's icon and description won't render locally.** Cursor resolves the manifest's `logo` relative path to a `raw.githubusercontent.com` URL using the marketplace's record of the plugin's repository + commit SHA. For a local install, there's no marketplace record, so the icon falls back to a generic placeholder and the description may not surface in the MCP server picker. Both render correctly once the plugin is installed from the marketplace.
 
 ## Layout
 
