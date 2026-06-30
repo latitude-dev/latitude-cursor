@@ -2,6 +2,8 @@
 
 One-click install of the [Latitude](https://latitude.so) MCP server inside Cursor.
 
+[![Add Latitude MCP server to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](cursor://anysphere.cursor-deeplink/mcp/install?name=latitude&config=eyJ0eXBlIjoiaHR0cCIsInVybCI6Imh0dHBzOi8vYXBpLmxhdGl0dWRlLnNvL3YxL21jcCJ9)
+
 After installing and authorizing, the Cursor Agent can read and manage your Latitude workspace: projects, members, keys, traces, annotations, scores, searches, issues, datasets, and more. The full tool catalog is dynamically generated from the [Latitude API](https://api.latitude.so/docs).
 
 ## Install
